@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repositories\Expenses\IExpenseRepository.cs" />
+    <Compile Update="Reports\ResourceReportGenerationMessage.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceReportGenerationMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\ResourceReportGenerationMessage.pt-BR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceReportGenerationMessage.pt-BR.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\ResourceReportGenerationMessage.fr.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceReportGenerationMessage.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Remove="Repositories\Reports\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Reports\ResourceReportGenerationMessage.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceReportGenerationMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Reports\ResourceReportGenerationMessage.pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceReportGenerationMessage.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Reports\ResourceReportGenerationMessage.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceReportGenerationMessage.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Remove="Repositories\Reports\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Repositories\Reports\**" />
+  </ItemGroup>
+
+</Project>

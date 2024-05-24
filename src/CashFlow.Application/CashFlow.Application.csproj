@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CashFlow.Communication\CashFlow.Communication.csproj" />
+    <ProjectReference Include="..\CashFlow.Domain\CashFlow.Domain.csproj" />
+    <ProjectReference Include="..\CashFlow.Exception\CashFlow.Exception.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="UseCases\" />
+    <None Remove="UseCases\Expenses\" />
+    <None Remove="UseCases\Expenses\Register\" />
+    <None Remove="AutoMapper\AutoMapping" />
+    <None Remove="UseCases\Expenses\Register1\**" />
+    <None Remove="UseCases\Reports\**" />
+    <None Update="UseCases\Expenses\Reports\Pdf\Logo\Logo_nike_principal.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="ClosedXML" Version="0.104.0-preview2" />
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0-preview.3.24172.9" />
+    <PackageReference Include="PDFsharp-MigraDoc" Version="6.1.0-preview-3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="UseCases\Expenses\Register1\**" />
+    <Compile Remove="UseCases\Reports\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="UseCases\Expenses\Register1\**" />
+    <EmbeddedResource Remove="UseCases\Reports\**" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Black.ttf" />
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Black.ttf" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Regular.ttf" />
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Regular.ttf" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Black.ttf" />
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Black.ttf" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Regular.ttf" />
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Regular.ttf" />
+  </ItemGroup>
+</Project>
